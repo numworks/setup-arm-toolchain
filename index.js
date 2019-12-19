@@ -7,7 +7,7 @@ async function run() {
     const downloadUrl = "https://github.com/numworks/setup-arm-toolchain/releases/download/2019-q4/gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux.tar.bz2";
     const gccTarPath = await tc.downloadTool(downloadUrl);
     const gccPath = await tc.extractTar(gccTarPath, null, 'xj');
-    const binPath = path.join(gccPath, 'bin');
+    const binPath = path.join(gccPath, 'gcc-arm-none-eabi-9-2019-q4-major', 'bin');
     core.addPath(binPath);
   } catch (error) {
     core.setFailed(error.message);
