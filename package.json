@@ -1,0 +1,32 @@
+{
+  "name": "setup-arm-toolchain",
+  "version": "1.0.0",
+  "description": "Arm toolchain GitHub action",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/numworks/setup-arm-toolchain.git"
+  },
+  "keywords": [
+    "GitHub",
+    "Actions",
+    "Arm",
+    "Toolchain"
+  ],
+  "author": "NumWorks",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/numworks/setup-arm-toolchain/issues"
+  },
+  "homepage": "https://github.com/numworks/setup-arm-toolchain",
+  "dependencies": {
+    "@actions/core": "^1.2.0",
+    "@actions/tool-cache": "^1.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.2"
+  }
+}
