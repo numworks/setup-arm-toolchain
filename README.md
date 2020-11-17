@@ -15,5 +15,7 @@ steps:
 - Create a new GitHub release, and name it after the branch with an "assets" suffix (e.g. `2020-q2-assets`)
 - Attach all tarballs from Arm to this release (serves as a mirror for future GitHub action runs), and note their final URL
 - Update the `downloadUrl` in `index.js` to point to the right tarball
-- Run `npm install` and add the `nodes_modules` folder to the repository
+- Update the `binPath` in `index.js` to point to the right folder in the decompressed tarball
+- Remove your local `node_modules` directory if any
+- Run `npm install` and add the `node_modules` folder to the repository
 - Commit and push said branch to GitHub. Voilà!
