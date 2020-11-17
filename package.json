@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Arm toolchain GitHub action",
   "main": "index.js",
-  "scripts": {
-    "lint": "eslint index.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/numworks/setup-arm-toolchain.git"
@@ -25,8 +22,5 @@
   "dependencies": {
     "@actions/core": "^1.2.6",
     "@actions/tool-cache": "^1.1.2"
-  },
-  "devDependencies": {
-    "eslint": "^6.7.2"
   }
 }
