@@ -5,9 +5,9 @@ const path = require('path');
 async function run() {
   try {
     // Change the three following constants when updating GCC version
-    const downloadUrl = 'https://github.com/numworks/setup-arm-toolchain/releases/download/2020-q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2';
-    const versionTag = '2020.4.0'; // tool-cache expects this to follow semver.org
-    const binPath = ['gcc-arm-none-eabi-10-2020-q4-major', 'bin']; // Path to the binary folder in the tarball
+    const downloadUrl = 'https://github.com/numworks/setup-arm-toolchain/releases/download/2021-10/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2';
+    const versionTag = '2021.10.0'; // tool-cache expects this to follow semver.org
+    const binPath = ['gcc-arm-none-eabi-10.3-2021.10', 'bin']; // Path to the binary folder in the tarball
 
     const cacheKey = 'gcc-arm-none-eabi';
     let cachedGCCPath = tc.find(cacheKey, versionTag);
