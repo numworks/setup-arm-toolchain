@@ -2,5 +2,5 @@ name: 'Setup Arm toolchain'
 description: 'Setup the GNU Arm Embedded toolchain. It contains integrated and validated packages featuring the Arm Embedded GCC compiler, libraries and other GNU tools necessary for bare-metal software development on devices based on the Arm Cortex-M and Cortex-R processors.'
 author: 'NumWorks'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'index.js'
