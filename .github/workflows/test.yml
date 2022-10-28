@@ -9,6 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - run: npm ci
     - uses: ./
     - run: arm-none-eabi-gcc --version
