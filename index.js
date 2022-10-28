@@ -12,13 +12,14 @@ async function run() {
     const cacheKey = 'gcc-arm-none-eabi';
     let cachedGCCPath = tc.find(cacheKey, versionTag);
     if (cachedGCCPath) {
-      core.info(`Using cached version ${cacheKey}`);
+      core.info(`Using cached version ${versionTag}`);
     } else {
-      core.info(`Downloading version ${cacheKey} from ${downloadUrl}`);
+      core.info(`Could not find cached version ${versionTag} in ${JSON.stringify(tc.findAllVersions(cacheKey))}`)
+      core.info(`Downloading version ${versionTag} from ${downloadUrl}`);
       const downloadGCCTarPath = await tc.downloadTool(downloadUrl);
-      core.info(`Extracting version ${cacheKey}`);
+      core.info(`Extracting version ${versionTag}`);
       const downloadGCCPath = await tc.extractTar(downloadGCCTarPath, null, 'xJ');
-      core.info(`Caching version ${cacheKey}`);
+      core.info(`Caching version ${versionTag}`);
       cachedGCCPath = await tc.cacheDir(downloadGCCPath, cacheKey, versionTag);
     }
     core.addPath(path.join(cachedGCCPath, ...binPath));
