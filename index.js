@@ -6,7 +6,12 @@ async function run() {
   try {
     // Change the three following constants when updating GCC version
     const downloadUrl = 'https://github.com/numworks/setup-arm-toolchain/releases/download/2022-08/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi.tar.xz';
-    const versionTag = '2022.08.0'; // tool-cache expects this to follow semver.org
+    const versionTag = '2022.8.0'; // tool-cache expects this to follow semver.org
+    // CAUTION: semver syntax is *giant* pain in the butt. For example,
+    // "2022.08.0" is not compliant because of a leading zero in "08". When
+    // updating this value, you should check in a node shell with this command
+    // > require("semver").valid("2022.8.0")
+    // and make sure it returns a non-null value
     const binPath = ['arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi', 'bin']; // Path to the binary folder in the tarball
 
     const cacheKey = 'gcc-arm-none-eabi';
