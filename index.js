@@ -12,7 +12,6 @@ async function run() {
     // updating this value, you should check in a node shell with this command
     // > require("semver").valid("2022.8.0")
     // and make sure it returns a non-null value
-    const binPath = ['arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi', 'bin']; // Path to the binary folder in the tarball
 
     const cacheKey = 'gcc-arm-none-eabi';
     let cachedGCCPath = tc.find(cacheKey, versionTag);
@@ -23,11 +22,11 @@ async function run() {
       core.info(`Downloading version ${versionTag} from ${downloadUrl}`);
       const downloadGCCTarPath = await tc.downloadTool(downloadUrl);
       core.info(`Extracting version ${versionTag}`);
-      const downloadGCCPath = await tc.extractTar(downloadGCCTarPath, null, 'xJ');
+      const downloadGCCPath = await tc.extractTar(downloadGCCTarPath, null, ['-x', '--xz', '--strip-components=1']);
       core.info(`Caching version ${versionTag}`);
       cachedGCCPath = await tc.cacheDir(downloadGCCPath, cacheKey, versionTag);
     }
-    core.addPath(path.join(cachedGCCPath, ...binPath));
+    core.addPath(path.join(cachedGCCPath, 'bin'));
   } catch (error) {
     core.setFailed(error.message);
   }
